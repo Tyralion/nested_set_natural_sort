@@ -4,12 +4,8 @@ module NestedSetNaturalSort
 
   module ClassMethods
 
-    def rebuild!(validate_nodes = true)
-
-      unscoped do
-        ::NestedSetNaturalSort::SortedTree.new(self, validate_nodes).rebuild!
-      end
-
+    def rebuild!(validate_nodes = false)
+      ::NestedSetNaturalSort::SortedTree.new(self, validate_nodes).rebuild!
     end # rebuild!
 
   end # ClassMethods
